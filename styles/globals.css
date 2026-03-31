@@ -3,18 +3,27 @@
    - 토큰 CSS 변수 사용으로 Figma 브랜드 컬러 변경 시 자동 반영
    =========================== */
 
-/* 좌측 사이드바: 비활성 메뉴 배경 리셋 */
-.nextra-sidebar-container a {
+/* 좌측 사이드바: 메뉴 버튼 높이·라운딩 */
+.nextra-sidebar-container a,
+.nextra-sidebar-container button {
+  min-height: 33px !important;
+  border-radius: 8px !important;
   background-color: transparent !important;
 }
 
-/* 좌측 사이드바: 활성 메뉴만 브랜드 배경 */
+/* 좌측 사이드바: 활성 메뉴 — 그레이 배경 + 블랙 텍스트 */
 .nextra-sidebar-container li.active > a {
-  background-color: color-mix(in srgb, var(--colors-brand-600, #7f56d9) 10%, transparent) !important;
-  color: var(--colors-brand-700, #6941c6) !important;
+  background-color: var(--colors-background-bgSecondary, #f2f4f7) !important;
+  color: var(--colors-text-textPrimary-900, #101828) !important;
+  font-weight: 600 !important;
 }
 
-/* 우측 TOC: 활성 링크 */
+/* 좌측 사이드바: 호버 시 그레이 */
+.nextra-sidebar-container a:hover {
+  color: var(--colors-text-textSecondary-700, #344054) !important;
+}
+
+/* 우측 TOC: 활성 링크 — 블랙 */
 .nextra-toc a[class*="nx-text-primary"] {
-  color: var(--colors-brand-700, #6941c6) !important;
+  color: var(--colors-text-textPrimary-900, #101828) !important;
 }

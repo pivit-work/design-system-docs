@@ -1,13 +1,17 @@
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default {
-    primaryHue: 259,
-    primarySaturation: 63,
+    primaryHue: 220,
+    primarySaturation: 10,
     darkMode: false,
+    nextThemes: {
+        defaultTheme: 'light',
+        forcedTheme: 'light',
+    },
     logo: (
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <img src={`${basePath}/logo.webp`} alt="Logo" style={{ height: 28, width: 28, borderRadius: 6 }} />
-            <strong>Pivit 디자인 시스템</strong>
+            <img src={`${basePath}/logo.png`} alt="Pivit" style={{ height: 28 }} />
+            <span style={{ fontSize: 14, fontWeight: 500, color: '#667085' }}>Design System</span>
         </span>
     ),
     project: {

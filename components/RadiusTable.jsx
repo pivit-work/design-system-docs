@@ -37,7 +37,7 @@ export function RadiusTable() {
       <section style={{ marginBottom: 56 }}>
         <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 8 }}>Radius Scale</h2>
         <p style={{ fontSize: 14, color: '#717680', marginBottom: 24 }}>
-          모서리 둥글기 토큰입니다. 컴포넌트의 크기와 용도에 맞게 사용합니다.
+          Corner Radius 토큰입니다. 컴포넌트의 크기와 용도에 맞게 사용합니다.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
           {radii.map(r => {
