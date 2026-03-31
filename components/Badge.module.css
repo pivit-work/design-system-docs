@@ -1,0 +1,209 @@
+/* Badge base */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  border: none;
+  cursor: default;
+  line-height: 1;
+}
+
+/* Type: Pill (fully rounded) */
+.pill {
+  border-radius: 9999px;
+}
+
+/* Type: Badge (slightly rounded) */
+.rounded {
+  border-radius: 6px;
+}
+
+/* Size: sm */
+.sm {
+  height: 22px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.sm .dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* Size: md */
+.md {
+  height: 24px;
+  font-size: 14px;
+  padding: 2px 10px;
+}
+
+.md .dot {
+  width: 8px;
+  height: 8px;
+}
+
+/* Size: lg */
+.lg {
+  height: 28px;
+  font-size: 14px;
+  padding: 4px 12px;
+}
+
+.lg .dot {
+  width: 8px;
+  height: 8px;
+}
+
+/* Dot indicator */
+.dot {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Icon */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sm .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.md .icon,
+.lg .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Color: Gray ─── */
+.gray {
+  background: var(--componentColors-utility-gray-utilityGray50, #f2f4f7);
+  color: var(--componentColors-utility-gray-utilityGray700, #344054);
+}
+
+.gray .dot {
+  background: var(--componentColors-utility-gray-utilityGray500, #667085);
+}
+
+/* ─── Color: Brand ─── */
+.brand {
+  background: var(--componentColors-utility-brand-utilityBrand50, #f4ebff);
+  color: var(--componentColors-utility-brand-utilityBrand700, #6941c6);
+}
+
+.brand .dot {
+  background: var(--componentColors-utility-brand-utilityBrand500, #9e77ed);
+}
+
+/* ─── Color: Error ─── */
+.error {
+  background: var(--componentColors-utility-error-utilityError50, #fef3f2);
+  color: var(--componentColors-utility-error-utilityError700, #b42318);
+}
+
+.error .dot {
+  background: var(--componentColors-utility-error-utilityError500, #f04438);
+}
+
+/* ─── Color: Warning ─── */
+.warning {
+  background: var(--componentColors-utility-warning-utilityWarning50, #fffaeb);
+  color: var(--componentColors-utility-warning-utilityWarning700, #b54708);
+}
+
+.warning .dot {
+  background: var(--componentColors-utility-warning-utilityWarning500, #f79009);
+}
+
+/* ─── Color: Success ─── */
+.success {
+  background: var(--componentColors-utility-success-utilitySuccess50, #ecfdf3);
+  color: var(--componentColors-utility-success-utilitySuccess700, #067647);
+}
+
+.success .dot {
+  background: var(--componentColors-utility-success-utilitySuccess500, #17b26a);
+}
+
+/* ─── Color: Gray blue ─── */
+.grayBlue {
+  background: var(--componentColors-utility-grayBlue-utilityGrayBlue50, #f0f1f5);
+  color: var(--componentColors-utility-grayBlue-utilityGrayBlue700, #3b3f54);
+}
+
+.grayBlue .dot {
+  background: var(--componentColors-utility-grayBlue-utilityGrayBlue500, #4e5ba6);
+}
+
+/* ─── Color: Blue light ─── */
+.blueLight {
+  background: var(--componentColors-utility-blueLight-utilityBlueLight50, #f0f9ff);
+  color: var(--componentColors-utility-blueLight-utilityBlueLight700, #026aa2);
+}
+
+.blueLight .dot {
+  background: var(--componentColors-utility-blueLight-utilityBlueLight500, #0ba5ec);
+}
+
+/* ─── Color: Blue ─── */
+.blue {
+  background: var(--componentColors-utility-blue-utilityBlue50, #eff8ff);
+  color: var(--componentColors-utility-blue-utilityBlue700, #175cd3);
+}
+
+.blue .dot {
+  background: var(--componentColors-utility-blue-utilityBlue500, #2e90fa);
+}
+
+/* ─── Color: Indigo ─── */
+.indigo {
+  background: var(--componentColors-utility-indigo-utilityIndigo50, #eef4ff);
+  color: var(--componentColors-utility-indigo-utilityIndigo700, #3538cd);
+}
+
+.indigo .dot {
+  background: var(--componentColors-utility-indigo-utilityIndigo500, #6172f3);
+}
+
+/* ─── Color: Purple ─── */
+.purple {
+  background: var(--componentColors-utility-purple-utilityPurple50, #f4f3ff);
+  color: var(--componentColors-utility-purple-utilityPurple700, #5925dc);
+}
+
+.purple .dot {
+  background: var(--componentColors-utility-purple-utilityPurple500, #7a5af8);
+}
+
+/* ─── Color: Pink ─── */
+.pink {
+  background: var(--componentColors-utility-pink-utilityPink50, #fdf2fa);
+  color: var(--componentColors-utility-pink-utilityPink700, #c11574);
+}
+
+.pink .dot {
+  background: var(--componentColors-utility-pink-utilityPink500, #ee46bc);
+}
+
+/* ─── Color: Orange ─── */
+.orange {
+  background: var(--componentColors-utility-orange-utilityOrange50, #fff6ed);
+  color: var(--componentColors-utility-orange-utilityOrange700, #c4320a);
+}
+
+.orange .dot {
+  background: var(--componentColors-utility-orange-utilityOrange500, #ef6820);
+}

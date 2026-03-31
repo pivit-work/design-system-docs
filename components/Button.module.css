@@ -1,0 +1,229 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  font-family: var(--fontFamily-fontFamilyBody, sans-serif);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* --- Sizes --- */
+.size-sm {
+  padding: 8px 14px;
+  font-size: 14px;
+  min-height: 36px;
+  border-radius: 8px;
+}
+
+.size-md {
+  padding: 10px 16px;
+  font-size: 14px;
+  min-height: 40px;
+  border-radius: 8px;
+}
+
+.size-lg {
+  padding: 10px 18px;
+  font-size: 16px;
+  min-height: 44px;
+  border-radius: 8px;
+}
+
+.size-xl {
+  padding: 12px 20px;
+  font-size: 16px;
+  min-height: 48px;
+  border-radius: 8px;
+}
+
+/* Icon only */
+.icon-only.size-sm { padding: 8px; min-width: 36px; }
+.icon-only.size-md { padding: 10px; min-width: 40px; }
+.icon-only.size-lg { padding: 12px; min-width: 44px; }
+.icon-only.size-xl { padding: 14px; min-width: 48px; }
+
+/* --- Action Button Variants --- */
+.variant-primary {
+  background-color: var(--colors-background-bgBrandSolid, #7f56d9);
+  color: var(--colors-foreground-fgWhite, #fff);
+}
+.variant-primary:hover:not(:disabled), .variant-primary.force-hover {
+  background-color: var(--colors-background-bgBrandSolidHover, #6941c6);
+}
+.variant-primary:active:not(:disabled), .variant-primary.force-active {
+  background-color: var(--colors-background-bgBrandSolidHover, #53389e);
+}
+.variant-primary.force-focused {
+  background-color: var(--colors-background-bgBrandSolid, #7f56d9);
+  box-shadow: 0 0 0 4px var(--colors-effects-focusRings-focusRingBrand, rgba(158, 119, 237, 0.24));
+}
+
+.variant-secondary {
+  background-color: var(--colors-background-bgPrimary, #fff);
+  color: var(--colors-text-textSecondary-700, #344054);
+  border: 1px solid var(--colors-border-borderPrimary, #d0d5dd);
+}
+.variant-secondary:hover:not(:disabled), .variant-secondary.force-hover {
+  background-color: var(--colors-background-bgPrimaryHover, #f9fafb);
+}
+.variant-secondary:active:not(:disabled), .variant-secondary.force-active {
+  background-color: var(--colors-background-bgSecondaryHover, #f2f4f7);
+}
+.variant-secondary.force-focused {
+  box-shadow: 0 0 0 4px var(--colors-effects-focusRings-focusRingGray, rgba(152, 162, 179, 0.14));
+}
+
+.variant-tertiary {
+  background-color: transparent;
+  color: var(--colors-text-textTertiary-600, #475467);
+}
+.variant-tertiary:hover:not(:disabled), .variant-tertiary.force-hover {
+  background-color: var(--colors-background-bgPrimaryHover, #f9fafb);
+}
+.variant-tertiary:active:not(:disabled), .variant-tertiary.force-active {
+  background-color: var(--colors-background-bgSecondaryHover, #f2f4f7);
+}
+.variant-tertiary.force-focused {
+  background-color: transparent;
+}
+
+.variant-link-color {
+  background-color: transparent;
+  color: var(--colors-foreground-fgBrandPrimary-600, #6941c6);
+  padding-left: 0;
+  padding-right: 0;
+}
+.variant-link-color:hover:not(:disabled), .variant-link-color.force-hover {
+  color: var(--colors-foreground-fgBrandPrimaryAlt, #53389e);
+}
+
+.variant-link-gray {
+  background-color: transparent;
+  color: var(--colors-text-textTertiary-600, #475467);
+  padding-left: 0;
+  padding-right: 0;
+}
+.variant-link-gray:hover:not(:disabled), .variant-link-gray.force-hover {
+  color: var(--colors-text-textSecondary-700, #344054);
+}
+
+/* --- Destructive Button Variants --- */
+.variant-destructive-primary {
+  background-color: var(--colors-background-bgErrorSolid, #d92d20);
+  color: var(--colors-foreground-fgWhite, #fff);
+}
+.variant-destructive-primary:hover:not(:disabled), .variant-destructive-primary.force-hover {
+  background-color: var(--colors-background-bgErrorSolidHover, #b42318);
+}
+.variant-destructive-primary.force-focused {
+  background-color: var(--colors-background-bgErrorSolid, #d92d20);
+  box-shadow: 0 0 0 4px var(--colors-effects-focusRings-focusRingError, rgba(240, 68, 56, 0.24));
+}
+
+.variant-destructive-secondary {
+  background-color: var(--colors-background-bgPrimary, #fff);
+  color: var(--colors-foreground-fgErrorPrimary, #b42318);
+  border: 1px solid var(--colors-border-borderError, #fda29b);
+}
+.variant-destructive-secondary:hover:not(:disabled), .variant-destructive-secondary.force-hover {
+  background-color: var(--colors-background-bgErrorPrimary, #fef3f2);
+}
+.variant-destructive-secondary.force-focused {
+  box-shadow: 0 0 0 4px var(--colors-effects-focusRings-focusRingError, rgba(240, 68, 56, 0.24));
+}
+
+.variant-destructive-tertiary {
+  background-color: transparent;
+  color: var(--colors-foreground-fgErrorPrimary, #b42318);
+}
+.variant-destructive-tertiary:hover:not(:disabled), .variant-destructive-tertiary.force-hover {
+  background-color: var(--colors-background-bgErrorPrimary, #fef3f2);
+}
+
+.variant-destructive-link {
+  background-color: transparent;
+  color: var(--colors-foreground-fgErrorPrimary, #b42318);
+  padding-left: 0;
+  padding-right: 0;
+}
+.variant-destructive-link:hover:not(:disabled), .variant-destructive-link.force-hover {
+  color: var(--colors-text-textErrorPrimaryHover, #912018);
+}
+
+/* --- Close Button --- */
+.variant-close {
+  background-color: transparent;
+  color: var(--colors-foreground-fgQuaternary-400, #667085);
+  padding: 0;
+  border-radius: 8px;
+}
+.variant-close:hover:not(:disabled), .variant-close.force-hover {
+  background-color: var(--colors-background-bgSecondaryHover, #f2f4f7);
+  color: var(--colors-foreground-fgSecondary-700, #344054);
+}
+.variant-close.force-focused {
+  box-shadow: 0 0 0 4px var(--colors-effects-focusRings-focusRingGray, rgba(152, 162, 179, 0.14));
+}
+.variant-close-dark {
+  background-color: transparent;
+  color: var(--colors-foreground-fgQuaternary-400, #98a2b3);
+  padding: 0;
+  border-radius: 8px;
+}
+.variant-close-dark:hover:not(:disabled), .variant-close-dark.force-hover {
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* --- Utility Button --- */
+.variant-utility-secondary {
+  background-color: var(--colors-background-bgPrimary, #fff);
+  color: var(--colors-text-textSecondary-700, #344054);
+  border: 1px solid var(--colors-border-borderPrimary, #d0d5dd);
+  border-radius: 8px;
+}
+.variant-utility-secondary:hover:not(:disabled), .variant-utility-secondary.force-hover {
+  background-color: var(--colors-background-bgPrimaryHover, #f9fafb);
+}
+
+.variant-utility-tertiary {
+  background-color: transparent;
+  color: var(--colors-foreground-fgQuaternary-400, #667085);
+  border-radius: 8px;
+}
+.variant-utility-tertiary:hover:not(:disabled), .variant-utility-tertiary.force-hover {
+  background-color: var(--colors-background-bgPrimaryHover, #f9fafb);
+  color: var(--colors-foreground-fgSecondary-700, #475467);
+}
+
+/* Focused state */
+.force-focused {
+  outline: none;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
