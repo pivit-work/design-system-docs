@@ -1,10 +1,67 @@
-# Pivit 디자인 시스템 가이드
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
-Pivit 프로젝트의 디자인 시스템 문서입니다.
+export const DownloadIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+);
 
-## 이 사이트의 원리
+export const AssetCard = ({ src, alt, dark, downloadName, imgWidth = '50%' }) => (
+  <div style={{
+    flex: 1,
+    minWidth: 240,
+    background: dark ? '#000' : '#f2f4f7',
+    borderRadius: 12,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '48px 32px 16px',
+    gap: 16,
+  }}>
+    <img src={`${basePath}/${src}`} alt={alt} style={{ width: imgWidth, maxWidth: 200 }} />
+    <button
+      onClick={() => {
+        fetch(`${basePath}/${src}`).then(r => r.blob()).then(blob => {
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = downloadName || src;
+          a.click();
+          URL.revokeObjectURL(a.href);
+        });
+      }}
+      style={{
+        alignSelf: 'flex-end',
+        color: dark ? '#98a2b3' : '#667085',
+        cursor: 'pointer',
+        padding: 8,
+        borderRadius: 6,
+        display: 'inline-flex',
+        transition: 'opacity 0.15s',
+        background: 'none',
+        border: 'none',
+      }}
+      title="Download PNG"
+    >
+      <DownloadIcon />
+    </button>
+  </div>
+);
 
-* **Next.js**: 웹사이트를 빠르고 쾌적하게 띄워주는 튼튼한 뼈대입니다.
-* **Nextra (MDX)**: 마크다운 파일(`.mdx`)에 글을 쓰면, 알아서 예쁜 웹사이트 문서로 변환해주는 마법 같은 도구입니다.
+Pivit 프로덕트의 디자인 시스템입니다.
 
-왼쪽 메뉴에서 **컴포넌트** 탭을 클릭해서 예시를 확인해보세요!
+## Symbol
+
+<div style={{ display: 'flex', gap: 16, marginTop: 16, marginBottom: 32 }}>
+  <AssetCard src="brand/symbol-black.png" alt="Symbol Black" downloadName="pivit-symbol-black.png" imgWidth="25%" />
+  <AssetCard src="brand/symbol-white.png" alt="Symbol White" dark downloadName="pivit-symbol-white.png" imgWidth="25%" />
+</div>
+
+## Logo
+
+<div style={{ display: 'flex', gap: 16, marginTop: 16, marginBottom: 32 }}>
+  <AssetCard src="brand/logo-black.png" alt="Logo Black" downloadName="pivit-logo-black.png" />
+  <AssetCard src="brand/logo-white.png" alt="Logo White" dark downloadName="pivit-logo-white.png" />
+</div>

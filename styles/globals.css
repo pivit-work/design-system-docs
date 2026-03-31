@@ -13,13 +13,14 @@
 
 /* 좌측 사이드바: 활성 메뉴 — 그레이 배경 + 블랙 텍스트 */
 .nextra-sidebar-container li.active > a {
-  background-color: var(--colors-background-bgSecondary, #f2f4f7) !important;
+  background-color: var(--colors-background-bgQuaternary, #e9eaeb) !important;
   color: var(--colors-text-textPrimary-900, #101828) !important;
   font-weight: 600 !important;
 }
 
-/* 좌측 사이드바: 호버 시 그레이 */
+/* 좌측 사이드바: 호버 시 그레이 배경 */
 .nextra-sidebar-container a:hover {
+  background-color: var(--colors-background-bgTertiary, #f5f5f5) !important;
   color: var(--colors-text-textSecondary-700, #344054) !important;
 }
 
