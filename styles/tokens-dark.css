@@ -66,18 +66,18 @@
   --colors-grayNeutral-800: #1f2a37;
   --colors-grayNeutral-900: #111927;
   --colors-grayNeutral-950: #0d121c;
-  --colors-brand-25: #fafaff;
-  --colors-brand-50: #f4f3ff;
-  --colors-brand-100: #ebe9fe;
-  --colors-brand-200: #d9d6fe;
-  --colors-brand-300: #bdb4fe;
-  --colors-brand-400: #9b8afb;
-  --colors-brand-500: #7a5af8;
-  --colors-brand-600: #6938ef;
-  --colors-brand-700: #5925dc;
-  --colors-brand-800: #4a1fb8;
-  --colors-brand-900: #3e1c96;
-  --colors-brand-950: #27115f;
+  --colors-brand-25: #fafef5;
+  --colors-brand-50: #f3fee7;
+  --colors-brand-100: #e3fbcc;
+  --colors-brand-200: #d0f8ab;
+  --colors-brand-300: #a6ef67;
+  --colors-brand-400: #85e13a;
+  --colors-brand-500: #66c61c;
+  --colors-brand-600: #4ca30d;
+  --colors-brand-700: #3b7c0f;
+  --colors-brand-800: #326212;
+  --colors-brand-900: #2b5314;
+  --colors-brand-950: #15290a;
   --colors-error-25: #fffbfa;
   --colors-error-50: #fef3f2;
   --colors-error-100: #fee4e2;
@@ -403,7 +403,7 @@
   --colors-border-borderSecondary: #22262f;
   --colors-border-borderErrorSubtle: #f04438;
   --colors-border-borderPrimary: #373a41;
-  --colors-border-borderBrand: #9b8afb;
+  --colors-border-borderBrand: #85e13a;
   --colors-border-borderDisabled: #373a41;
   --colors-border-borderError: #f97066;
   --colors-border-borderDisabledSubtle: #22262f;
@@ -412,13 +412,13 @@
   --colors-border-borderSecondaryAlt: #22262f;
   --colors-background-bgPrimary: #0c0e12;
   --colors-background-bgTertiary: #22262f;
-  --colors-background-bgBrandPrimary: #7a5af8;
+  --colors-background-bgBrandPrimary: #66c61c;
   --colors-background-bgErrorSecondary: #d92d20;
   --colors-background-bgWarningPrimary: #4e1d09;
   --colors-background-bgWarningSecondary: #dc6803;
   --colors-background-bgSuccessPrimary: #053321;
   --colors-background-bgSuccessSecondary: #079455;
-  --colors-background-bgBrandSolid: #6938ef;
+  --colors-background-bgBrandSolid: #4ca30d;
   --colors-background-bgSecondarySolid: #61656c;
   --colors-background-bgErrorSolid: #d92d20;
   --colors-background-bgWarningSolid: #dc6803;
@@ -427,9 +427,9 @@
   --colors-background-bgPrimaryHover: #22262f;
   --colors-background-bgDisabled: #22262f;
   --colors-background-bgActive: #22262f;
-  --colors-background-bgBrandSolidHover: #7a5af8;
+  --colors-background-bgBrandSolidHover: #66c61c;
   --colors-background-bgErrorPrimary: #55160c;
-  --colors-background-bgBrandSecondary: #6938ef;
+  --colors-background-bgBrandSecondary: #4ca30d;
   --colors-background-bgSecondary: #13161b;
   --colors-background-bgDisabledSubtle: #13161b;
   --colors-background-bgQuaternary: #373a41;
@@ -450,8 +450,8 @@
   --colors-foreground-fgSecondaryHover: #ececed;
   --colors-foreground-fgPrimary-900: #ffffff;
   --colors-foreground-fgDisabled: #85888e;
-  --colors-foreground-fgBrandSecondary-500: #7a5af8;
-  --colors-foreground-fgBrandPrimary-600: #7a5af8;
+  --colors-foreground-fgBrandSecondary-500: #66c61c;
+  --colors-foreground-fgBrandPrimary-600: #66c61c;
   --colors-foreground-fgQuaternary-400: #61656c;
   --colors-foreground-fgQuaternaryHover: #85888e;
   --colors-foreground-fgErrorPrimary: #f04438;
@@ -484,7 +484,7 @@
   --colors-effects-portfolioMockups-shadowMainCentreLg: rgba(255, 255, 255, 0);
   --colors-effects-portfolioMockups-shadowOverlayLg: rgba(255, 255, 255, 0);
   --colors-effects-portfolioMockups-shadowGridMd: rgba(255, 255, 255, 0);
-  --colors-effects-focusRings-focusRing: #7a5af8;
+  --colors-effects-focusRings-focusRing: #66c61c;
   --colors-effects-focusRings-focusRingError: #f04438;
   --spacing-0-0px: 0;
   --spacing-0․5-2px: 2;
@@ -544,18 +544,18 @@
   --grayDarkMode-800: #22262f;
   --grayDarkMode-900: #13161b;
   --grayDarkMode-950: #0c0e12;
-  --brand-25: #fafaff;
-  --brand-50: #f4f3ff;
-  --brand-100: #ebe9fe;
-  --brand-200: #d9d6fe;
-  --brand-300: #bdb4fe;
-  --brand-400: #9b8afb;
-  --brand-500: #7a5af8;
-  --brand-600: #6938ef;
-  --brand-700: #5925dc;
-  --brand-800: #4a1fb8;
-  --brand-900: #3e1c96;
-  --brand-950: #27115f;
+  --brand-25: #fafef5;
+  --brand-50: #f3fee7;
+  --brand-100: #e3fbcc;
+  --brand-200: #d0f8ab;
+  --brand-300: #a6ef67;
+  --brand-400: #85e13a;
+  --brand-500: #66c61c;
+  --brand-600: #4ca30d;
+  --brand-700: #3b7c0f;
+  --brand-800: #326212;
+  --brand-900: #2b5314;
+  --brand-950: #15290a;
   --error-25: #fffbfa;
   --error-50: #fef3f2;
   --error-100: #fee4e2;
@@ -894,13 +894,13 @@
   --gradient-gray-200>25-180deg: linear-gradient(180deg, #fdfdfd 0%, #e9eaeb 100%);
   --gradient-gray-200>50-180deg: linear-gradient(180deg, #fafafa 0%, #e9eaeb 100%);
   --gradient-gray-200>100-180deg: linear-gradient(180deg, #f5f5f5 0%, #e9eaeb 100%);
-  --gradient-brand-600>500-90deg: linear-gradient(90deg, #6938ef 0%, #7a5af8 100%);
-  --gradient-brand-700>600-45deg: linear-gradient(45deg, #5925dc 0%, #6938ef 100%);
-  --gradient-brand-800>600-45deg: linear-gradient(45deg, #4a1fb8 0%, #6938ef 100%);
-  --gradient-brand-800>600-90deg: linear-gradient(90deg, #4a1fb8 0%, #6938ef 100%);
-  --gradient-brand-800>700(26-5deg): linear-gradient(27deg, #4a1fb8 0%, #5925dc 100%);
-  --gradient-brand-900>600-45deg: linear-gradient(45deg, #3e1c96 0%, #6938ef 100%);
-  --gradient-brand-900>700-45deg: linear-gradient(45deg, #3e1c96 0%, #5925dc 100%);
+  --gradient-brand-600>500-90deg: linear-gradient(90deg, #4ca30d 0%, #66c61c 100%);
+  --gradient-brand-700>600-45deg: linear-gradient(45deg, #3b7c0f 0%, #4ca30d 100%);
+  --gradient-brand-800>600-45deg: linear-gradient(45deg, #326212 0%, #4ca30d 100%);
+  --gradient-brand-800>600-90deg: linear-gradient(90deg, #326212 0%, #4ca30d 100%);
+  --gradient-brand-800>700(26-5deg): linear-gradient(27deg, #326212 0%, #3b7c0f 100%);
+  --gradient-brand-900>600-45deg: linear-gradient(45deg, #2b5314 0%, #4ca30d 100%);
+  --gradient-brand-900>700-45deg: linear-gradient(45deg, #2b5314 0%, #3b7c0f 100%);
   --gradient-linear-10: linear-gradient(0deg, #cfc7f8 0%, #ebbba7 100%);
   --gradient-linear-11: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);
   --gradient-linear-12: linear-gradient(45deg, #7b6ae0 0%, #ffbb89 100%);
@@ -1009,15 +1009,15 @@
   --shadows-portfolioMockups-shadowOverlayRightLg: -40px 40px 72px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
   --shadows-portfolioMockups-shadowOverlayLeftLg: 100px 100px 150px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
   --shadows-portfolioMockups-shadowGridMd: 32px 32px 64px 0 #0a0d1214; /** Used for portfolio mockup layouts. */
-  --focusRings-focusRing: 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8; /** Used for focus states in components. For example toggles and checkboxes. */
-  --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
+  --focusRings-focusRing: 0 0 0 2px #ffffff, 0 0 0 4px #66c61c; /** Used for focus states in components. For example toggles and checkboxes. */
+  --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #66c61c; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
   /**
    * Used for focus states in components that also require a shadow and a subtle skeuomorphic effect. For example, buttons and tabs.
    * 
    * This can be replaced with focus-ring-shadow-xs if you prefer a flat style.
    */
-  --focusRings-focusRingShadowXsSkeuomorphic: inset 0 0 0 1px #0a0d122e, inset 0 -2px 0 0 #0a0d120d, 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8;
-  --focusRings-focusRingShadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px 0 #0a0d121a, 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
+  --focusRings-focusRingShadowXsSkeuomorphic: inset 0 0 0 1px #0a0d122e, inset 0 -2px 0 0 #0a0d120d, 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #66c61c;
+  --focusRings-focusRingShadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px 0 #0a0d121a, 0 0 0 2px #ffffff, 0 0 0 4px #66c61c; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
   --focusRings-focusRingError: 0 0 0 2px #ffffff, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components. For example, destructive button links. */
   --focusRings-focusRingErrorShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components that also require a shadow. For example, destructive buttons. */
   /**
@@ -1180,13 +1180,13 @@
   --componentColors-utility-blue-utilityBlue100: #194185;
   --componentColors-utility-blue-utilityBlue400: #1570ef;
   --componentColors-utility-blue-utilityBlue300: #175cd3;
-  --componentColors-utility-brand-utilityBrand600: #9b8afb;
-  --componentColors-utility-brand-utilityBrand700: #bdb4fe;
-  --componentColors-utility-brand-utilityBrand500: #7a5af8;
-  --componentColors-utility-brand-utilityBrand200: #4a1fb8;
-  --componentColors-utility-brand-utilityBrand50: #27115f;
-  --componentColors-utility-brand-utilityBrand100: #3e1c96;
-  --componentColors-utility-brand-utilityBrand400: #6938ef;
+  --componentColors-utility-brand-utilityBrand600: #85e13a;
+  --componentColors-utility-brand-utilityBrand700: #a6ef67;
+  --componentColors-utility-brand-utilityBrand500: #66c61c;
+  --componentColors-utility-brand-utilityBrand200: #326212;
+  --componentColors-utility-brand-utilityBrand50: #15290a;
+  --componentColors-utility-brand-utilityBrand100: #2b5314;
+  --componentColors-utility-brand-utilityBrand400: #4ca30d;
   --componentColors-utility-brand-utilityBrand50Alt: #13161b;
   --componentColors-utility-brand-utilityBrand100Alt: #22262f;
   --componentColors-utility-brand-utilityBrand200Alt: #373a41;
@@ -1194,9 +1194,9 @@
   --componentColors-utility-brand-utilityBrand500Alt: #85888e;
   --componentColors-utility-brand-utilityBrand600Alt: #94979c;
   --componentColors-utility-brand-utilityBrand700Alt: #cecfd2;
-  --componentColors-utility-brand-utilityBrand300: #5925dc;
-  --componentColors-utility-brand-utilityBrand900: #ebe9fe;
-  --componentColors-utility-brand-utilityBrand800: #d9d6fe;
+  --componentColors-utility-brand-utilityBrand300: #3b7c0f;
+  --componentColors-utility-brand-utilityBrand900: #e3fbcc;
+  --componentColors-utility-brand-utilityBrand800: #d0f8ab;
   --componentColors-utility-brand-utilityBrand300Alt: #373a41;
   --componentColors-utility-brand-utilityBrand800Alt: #ececed;
   --componentColors-utility-brand-utilityBrand900Alt: #f0f0f1;
@@ -1325,7 +1325,7 @@
   --componentColors-components-tooltips-tooltipSupportingText: #cecfd2;
   --componentColors-components-textEditor-textEditorIconFg: #94979c;
   --componentColors-components-textEditor-textEditorIconFgActive: #ffffff;
-  --componentColors-components-icons-featuredIcons-featuredIconLightFgBrand: #d9d6fe;
+  --componentColors-components-icons-featuredIcons-featuredIconLightFgBrand: #d0f8ab;
   --componentColors-components-icons-featuredIcons-featuredIconLightFgGray: #ececed;
   --componentColors-components-icons-featuredIcons-featuredIconLightFgError: #fecdca;
   --componentColors-components-icons-featuredIcons-featuredIconLightFgWarning: #fedf89;
@@ -1333,7 +1333,7 @@
   --componentColors-components-icons-icons-iconFgBrand: #94979c;
   --componentColors-components-icons-icons-iconFgBrandOnBrand: #94979c;
   --componentColors-components-sliders-sliderHandleBorder: #0c0e12;
-  --componentColors-components-sliders-sliderHandleBg: #7a5af8;
+  --componentColors-components-sliders-sliderHandleBg: #66c61c;
   --componentColors-components-mockups-screenMockupBorder: #373a41;
   --componentColors-components-footers-footerButtonFg: #cecfd2;
   --componentColors-components-footers-footerButtonFgHover: #f0f0f1;
@@ -1343,8 +1343,8 @@
   --componentColors-components-toggles-toggleSlimBorderPressed: rgba(255, 255, 255, 0);
   --componentColors-components-toggles-toggleSlimBorderPressedHover: rgba(255, 255, 255, 0);
   --componentColors-components-avatars-avatarStylesBgNeutral: #e0e0e0;
-  --componentColors-components-buttons-buttonPrimaryIcon: #bdb4fe;
-  --componentColors-components-buttons-buttonPrimaryIconHover: #d9d6fe;
+  --componentColors-components-buttons-buttonPrimaryIcon: #a6ef67;
+  --componentColors-components-buttons-buttonPrimaryIconHover: #d0f8ab;
   --componentColors-components-buttons-buttonDestructivePrimaryIcon: #fda29b;
   --componentColors-components-buttons-buttonDestructivePrimaryIconHover: #fecdca;
   --componentColors-alpha-alphaWhite90: rgba(12, 14, 18, 0.9);
