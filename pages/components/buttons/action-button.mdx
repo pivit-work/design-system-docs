@@ -17,22 +17,22 @@ Figma 컴포넌트: `Buttons/Button`
 <ComponentPreview code={`<Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="tertiary">Tertiary</Button>
-<Button variant="link-color">Link color</Button>
-<Button variant="link-gray">Link gray</Button>`}>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>`}>
   <Button variant="primary">Primary</Button>
   <Button variant="secondary">Secondary</Button>
   <Button variant="tertiary">Tertiary</Button>
-  <Button variant="link-color">Link color</Button>
-  <Button variant="link-gray">Link gray</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
 </ComponentPreview>
 
 | Hierarchy | 용도 |
 | --- | --- |
 | **Primary** | 화면에서 가장 중요한 액션. 한 화면에 1개 권장 |
-| **Secondary** | Primary를 보조하는 액션 |
+| **Secondary** | 브랜드 컬러 배경의 보조 액션 |
 | **Tertiary** | 낮은 우선순위 액션 |
-| **Link color** | 브랜드 컬러의 인라인 텍스트 링크 스타일 |
-| **Link gray** | 뉴트럴 톤의 인라인 텍스트 링크 스타일 |
+| **Outline** | 테두리가 있는 중립 톤 버튼. 보조적 액션에 사용 |
+| **Ghost** | 배경 없는 최소 스타일 버튼. 인라인 또는 반복 액션에 사용 |
 
 ---
 
@@ -40,12 +40,12 @@ Figma 컴포넌트: `Buttons/Button`
 
 4가지 사이즈를 지원합니다.
 
-<ComponentPreview code={`<Button variant="primary" size="sm">SM (36px)</Button>
-<Button variant="primary" size="md">MD (40px)</Button>
+<ComponentPreview code={`<Button variant="primary" size="sm">SM (26px)</Button>
+<Button variant="primary" size="md">MD (36px)</Button>
 <Button variant="primary" size="lg">LG (44px)</Button>
 <Button variant="primary" size="xl">XL (48px)</Button>`}>
-  <Button variant="primary" size="sm">SM (36px)</Button>
-  <Button variant="primary" size="md">MD (40px)</Button>
+  <Button variant="primary" size="sm">SM (26px)</Button>
+  <Button variant="primary" size="md">MD (36px)</Button>
   <Button variant="primary" size="lg">LG (44px)</Button>
   <Button variant="primary" size="xl">XL (48px)</Button>
 </ComponentPreview>
@@ -98,6 +98,34 @@ Figma 컴포넌트: `Buttons/Button`
   <Button variant="tertiary" isLoading={true}>Loading</Button>
 </ComponentPreview>
 
+### Outline States
+
+<ComponentPreview code={`<Button variant="outline">Default</Button>
+<Button variant="outline" state="hover">Hover</Button>
+<Button variant="outline" state="focused">Focused</Button>
+<Button variant="outline" state="disabled">Disabled</Button>
+<Button variant="outline" isLoading={true}>Loading</Button>`}>
+  <Button variant="outline">Default</Button>
+  <Button variant="outline" state="hover">Hover</Button>
+  <Button variant="outline" state="focused">Focused</Button>
+  <Button variant="outline" state="disabled">Disabled</Button>
+  <Button variant="outline" isLoading={true}>Loading</Button>
+</ComponentPreview>
+
+### Ghost States
+
+<ComponentPreview code={`<Button variant="ghost">Default</Button>
+<Button variant="ghost" state="hover">Hover</Button>
+<Button variant="ghost" state="focused">Focused</Button>
+<Button variant="ghost" state="disabled">Disabled</Button>
+<Button variant="ghost" isLoading={true}>Loading</Button>`}>
+  <Button variant="ghost">Default</Button>
+  <Button variant="ghost" state="hover">Hover</Button>
+  <Button variant="ghost" state="focused">Focused</Button>
+  <Button variant="ghost" state="disabled">Disabled</Button>
+  <Button variant="ghost" isLoading={true}>Loading</Button>
+</ComponentPreview>
+
 ---
 
 ## Icon Only
@@ -108,12 +136,16 @@ Figma 컴포넌트: `Buttons/Button`
 <Button variant="primary" size="md" iconOnly={true}>+</Button>
 <Button variant="primary" size="lg" iconOnly={true}>+</Button>
 <Button variant="secondary" size="md" iconOnly={true}>+</Button>
-<Button variant="tertiary" size="md" iconOnly={true}>+</Button>`}>
+<Button variant="tertiary" size="md" iconOnly={true}>+</Button>
+<Button variant="outline" size="md" iconOnly={true}>+</Button>
+<Button variant="ghost" size="md" iconOnly={true}>+</Button>`}>
   <Button variant="primary" size="sm" iconOnly={true}>+</Button>
   <Button variant="primary" size="md" iconOnly={true}>+</Button>
   <Button variant="primary" size="lg" iconOnly={true}>+</Button>
   <Button variant="secondary" size="md" iconOnly={true}>+</Button>
   <Button variant="tertiary" size="md" iconOnly={true}>+</Button>
+  <Button variant="outline" size="md" iconOnly={true}>+</Button>
+  <Button variant="ghost" size="md" iconOnly={true}>+</Button>
 </ComponentPreview>
 
 ---
@@ -121,7 +153,7 @@ Figma 컴포넌트: `Buttons/Button`
 ## Props
 
 <PropsTable data={[
-  { name: 'variant', type: "primary | secondary | tertiary | link-color | link-gray", default: "primary", description: '버튼의 Hierarchy (시각적 중요도)' },
+  { name: 'variant', type: "primary | secondary | tertiary | outline | ghost", default: "primary", description: '버튼의 Hierarchy (시각적 중요도)' },
   { name: 'size', type: "sm | md | lg | xl", default: "md", description: '버튼 크기' },
   { name: 'state', type: "default | hover | focused | disabled", default: "default", description: '버튼 상태 (문서 시각화용)' },
   { name: 'disabled', type: 'boolean', default: 'false', description: '비활성화 여부' },
@@ -139,6 +171,6 @@ Figma 컴포넌트: `Buttons/Button`
 | Property | Values |
 | --- | --- |
 | **Size** | `sm` `md` `lg` `xl` |
-| **Hierarchy** | `Primary` `Secondary` `Tertiary` `Link color` `Link gray` |
+| **Hierarchy** | `Primary` `Secondary` `Tertiary` `Outline` `Ghost` |
 | **State** | `Default` `Hover` `Focused` `Disabled` `Loading` |
 | **Icon only** | `True` `False` |
