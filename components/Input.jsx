@@ -20,8 +20,8 @@ const MailIcon = () => (
 );
 
 const ChevronDown = () => (
-  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 7.5l5 5 5-5" />
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 6l4 4 4-4" />
   </svg>
 );
 
@@ -75,13 +75,22 @@ export function Input({
     state === 'focused' && styles.focused,
     state === 'disabled' && styles.disabled,
     destructive && styles.destructive,
+    type === 'tags' && styles['tags-wrapper'],
+    type === 'trailing-button' && styles['trailing-button-wrapper'],
   ].filter(Boolean).join(' ');
 
-  const renderTrailingIcon = () => {
-    if (destructive && state !== 'disabled') {
+  const renderTrailingDecoration = () => {
+    if (destructive && state !== 'disabled' && type === 'default') {
       return (
         <span className={styles['trailing-icon']}>
           <AlertCircle />
+        </span>
+      );
+    }
+    if (helpIcon && type !== 'tags' && type !== 'trailing-button') {
+      return (
+        <span className={styles['input-help-icon']}>
+          <HelpCircle />
         </span>
       );
     }
@@ -97,7 +106,6 @@ export function Input({
         <label className={styles.label}>
           {label}
           {required && <span className={styles.required}>*</span>}
-          {helpIcon && <span className={styles['help-icon']}><HelpCircle /></span>}
         </label>
       )}
 
@@ -126,7 +134,7 @@ export function Input({
           <div className={styles['tags-container']}>
             {tags.map((tag, i) => (
               <span key={i} className={styles.tag}>
-                <span className={styles['tag-dot']} />
+                <span className={styles['tag-avatar']}>{tag.charAt(0)}</span>
                 {tag}
                 <span className={styles['tag-close']}><XIcon /></span>
               </span>
@@ -134,7 +142,7 @@ export function Input({
             <input
               className={styles['tags-input']}
               type="text"
-              placeholder={tags.length === 0 ? placeholder : 'Add users'}
+              placeholder={tags.length === 0 ? placeholder : ''}
               disabled={state === 'disabled'}
               readOnly
             />
@@ -150,8 +158,8 @@ export function Input({
           />
         )}
 
-        {/* Trailing addons */}
-        {renderTrailingIcon()}
+        {/* Trailing decorations */}
+        {renderTrailingDecoration()}
         {type === 'trailing-dropdown' && trailingDropdown && (
           <button className={styles['trailing-dropdown']} type="button">
             {trailingDropdown}
@@ -160,6 +168,7 @@ export function Input({
         )}
         {type === 'trailing-button' && trailingButton && (
           <button className={styles['trailing-button']} type="button">
+            <CopyIcon />
             {trailingButton}
           </button>
         )}
@@ -192,6 +201,7 @@ export function Textarea({
     state === 'focused' && styles.focused,
     state === 'disabled' && styles.disabled,
     destructive && styles.destructive,
+    type === 'tags' && styles['tags-wrapper'],
   ].filter(Boolean).join(' ');
 
   return (
@@ -200,15 +210,20 @@ export function Textarea({
         <label className={styles.label}>
           {label}
           {required && <span className={styles.required}>*</span>}
-          {helpIcon && <span className={styles['help-icon']}><HelpCircle /></span>}
+          {helpIcon && (
+            <span className={styles['help-icon']}>
+              <HelpCircle />
+            </span>
+          )}
         </label>
       )}
 
       <div className={styles['textarea-container']}>
         {type === 'tags' ? (
-          <div className={styles['tags-container']} style={{ padding: '10px 14px', minHeight: 128, alignItems: 'flex-start' }}>
+          <div className={styles['textarea-tags']}>
             {tags.map((tag, i) => (
               <span key={i} className={styles.tag}>
+                <span className={styles['tag-avatar']}>{tag.charAt(0)}</span>
                 {tag}
                 <span className={styles['tag-close']}><XIcon /></span>
               </span>
@@ -216,7 +231,7 @@ export function Textarea({
             <input
               className={styles['tags-input']}
               type="text"
-              placeholder={tags.length === 0 ? placeholder : 'Add tags...'}
+              placeholder={tags.length === 0 ? placeholder : ''}
               disabled={state === 'disabled'}
               readOnly
             />

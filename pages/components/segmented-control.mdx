@@ -1,0 +1,99 @@
+import { SegmentedControl } from '../../components/SegmentedControl'
+import { ComponentPreview, PropsTable } from '../../components/ComponentPreview'
+
+export const defaultItems = [
+  { label: '전체' },
+  { label: '진행중' },
+  { label: '완료' },
+]
+
+export const dateRangeItems = [
+  { label: '12개월' },
+  { label: '30일' },
+  { label: '7일' },
+  { label: '24시간' },
+]
+
+# Segmented Control
+
+세그먼트 컨트롤은 버튼 그룹을 툴바나 분할 버튼 형태로 결합한 컴포넌트입니다. UI에서 미니 "탭" 역할로도 활용되며, 예를 들어 날짜 범위를 전환하는 데 사용합니다.
+
+Figma 컴포넌트: `Segmented_control`
+
+---
+
+## Default
+
+기본 세그먼트 컨트롤입니다. 첫 번째 아이템이 활성화 상태로 표시됩니다.
+
+<ComponentPreview code={`<SegmentedControl items={[
+  { label: '전체' },
+  { label: '진행중' },
+  { label: '완료' },
+]} />`}>
+  <SegmentedControl items={defaultItems} />
+</ComponentPreview>
+
+---
+
+## Size
+
+`md`와 `sm` 두 가지 크기를 지원합니다.
+
+<ComponentPreview code={`<SegmentedControl size="md" items={items} />
+<SegmentedControl size="sm" items={items} />`}>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
+    <SegmentedControl size="md" items={defaultItems} />
+    <SegmentedControl size="sm" items={defaultItems} />
+  </div>
+</ComponentPreview>
+
+---
+
+## Date Range
+
+날짜 범위 필터처럼 4개 이상의 아이템도 사용할 수 있습니다.
+
+<ComponentPreview code={`<SegmentedControl items={[
+  { label: '12개월' },
+  { label: '30일' },
+  { label: '7일' },
+  { label: '24시간' },
+]} />`}>
+  <SegmentedControl items={dateRangeItems} />
+</ComponentPreview>
+
+---
+
+## Dark Mode
+
+다크 모드에서도 동일한 시각적 일관성을 유지합니다. 우측 상단의 다크 모드 토글로 확인하세요.
+
+<ComponentPreview dark code={`<SegmentedControl items={[
+  { label: '전체' },
+  { label: '진행중' },
+  { label: '완료' },
+]} />`}>
+  <SegmentedControl items={defaultItems} />
+</ComponentPreview>
+
+---
+
+## Props
+
+<PropsTable data={[
+  { name: 'items', type: '{ label: string, value?: string }[]', default: '[]', description: '세그먼트 아이템 배열' },
+  { name: 'size', type: "'md' | 'sm'", default: "'md'", description: '세그먼트 크기' },
+  { name: 'defaultValue', type: 'string', default: '첫 번째 항목', description: '초기 선택 값 (uncontrolled)' },
+  { name: 'value', type: 'string', default: '-', description: '선택 값 (controlled)' },
+  { name: 'onChange', type: '(value: string) => void', default: '-', description: '선택 변경 콜백' },
+]} />
+
+---
+
+## Figma Variants
+
+| Property | Values |
+| --- | --- |
+| **Size** | `md` `sm` |
+| **Active** | `on` `off` |

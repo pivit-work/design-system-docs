@@ -19,9 +19,9 @@ const CheckIcon = () => (
 
 const DotsIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor">
-    <circle cx="10" cy="4" r="1.5" />
-    <circle cx="10" cy="10" r="1.5" />
-    <circle cx="10" cy="16" r="1.5" />
+    <circle cx="10" cy="4" r="1.67" />
+    <circle cx="10" cy="10" r="1.67" />
+    <circle cx="10" cy="16" r="1.67" />
   </svg>
 );
 
@@ -77,27 +77,39 @@ export function Dropdown({
   const renderTrigger = () => {
     if (trigger === 'icon') {
       return (
-        <button className={styles['trigger-icon']} type="button">
-          <span style={{ width: 20, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <DotsIcon />
-          </span>
+        <button
+          className={`${styles['trigger-icon']} ${open ? styles.open : ''}`}
+          type="button"
+          aria-expanded={open}
+          aria-label="More options"
+        >
+          <DotsIcon />
         </button>
       );
     }
     if (trigger === 'avatar') {
       return (
-        <button className={styles['trigger-avatar']} type="button">
+        <button
+          className={`${styles['trigger-avatar']} ${open ? styles.open : ''}`}
+          type="button"
+          aria-expanded={open}
+        >
           <span className={styles['avatar-circle']}>
             {avatarText || 'JL'}
           </span>
         </button>
       );
     }
-    // default: button
     return (
-      <button className={styles.trigger} type="button">
+      <button
+        className={`${styles.trigger} ${open ? styles.open : ''}`}
+        type="button"
+        aria-expanded={open}
+      >
         {label}
-        <span className={styles.chevron}><ChevronDown /></span>
+        <span className={styles.chevron}>
+          <ChevronDown />
+        </span>
       </button>
     );
   };
@@ -116,7 +128,9 @@ export function Dropdown({
 export function DropdownMenu({ children, ...props }) {
   return (
     <div className={`${styles.menu} ${styles['static-open']}`} {...props}>
-      {children}
+      <div className={styles['menu-items']}>
+        {children}
+      </div>
     </div>
   );
 }
@@ -139,23 +153,39 @@ export function DropdownItem({
   if (disabled || state === 'disabled') classes.push(styles.disabled);
 
   return (
-    <button className={classes.join(' ')} disabled={disabled || state === 'disabled'} type="button" {...props}>
-      {checked !== undefined && (
-        <span className={`${styles['item-checkbox']} ${checked ? styles.checked : ''}`}>
-          {checked && (
-            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 3L4.5 8.5 2 6" />
-            </svg>
+    <button
+      className={classes.join(' ')}
+      disabled={disabled || state === 'disabled'}
+      type="button"
+      {...props}
+    >
+      <div className={styles['menu-item-content']}>
+        <div className={styles['item-icon-text']}>
+          {checked !== undefined && (
+            <span
+              className={`${styles['item-checkbox']} ${checked ? styles.checked : ''}`}
+            >
+              {checked && (
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M10 3L4.5 8.5 2 6" />
+                </svg>
+              )}
+            </span>
           )}
-        </span>
-      )}
-      {icon && (
-        <span className={styles['item-icon']}>
-          {icon}
-        </span>
-      )}
-      <span className={styles['item-label']}>{children}</span>
-      {shortcut && <span className={styles['item-shortcut']}>{shortcut}</span>}
+          {icon && <span className={styles['item-icon']}>{icon}</span>}
+          <span className={styles['item-label']}>{children}</span>
+        </div>
+        {shortcut && <span className={styles['item-shortcut']}>{shortcut}</span>}
+      </div>
     </button>
   );
 }
@@ -164,11 +194,14 @@ export function DropdownItem({
    DropdownHeader
    =========================== */
 
-export function DropdownHeader({ children, avatar = false, name, email }) {
+export function DropdownHeader({ children, avatar = false, name, email, online = true }) {
   if (avatar) {
     return (
       <div className={styles['menu-header-avatar']}>
-        <span className={styles['avatar-circle']}>{name ? name.charAt(0) : 'U'}</span>
+        <span className={styles['avatar-circle']}>
+          {name ? name.charAt(0) : 'U'}
+          {online && <span className={styles['avatar-online']} />}
+        </span>
         <div className={styles['header-avatar-info']}>
           <span className={styles['header-avatar-name']}>{name}</span>
           <span className={styles['header-avatar-email']}>{email}</span>
@@ -194,8 +227,10 @@ export function DropdownDivider() {
 export function Select({
   label,
   hint,
+  required = false,
   placeholder,
   value,
+  supportingText,
   size = 'md',
   state = 'default',
   leadingIcon,
@@ -207,7 +242,9 @@ export function Select({
   ...props
 }) {
   const controlClasses = [styles['select-control'], styles[size]];
-  if (!value && placeholder) controlClasses.push(styles.placeholder);
+  if (!value && placeholder && !search && tags.length === 0) {
+    controlClasses.push(styles.placeholder);
+  }
   if (state === 'focused') controlClasses.push(styles.focused);
   if (state === 'disabled') controlClasses.push(styles.disabled);
   if (state === 'open') controlClasses.push(styles.open);
@@ -216,32 +253,57 @@ export function Select({
 
   return (
     <div className={styles['select-wrapper']} {...props}>
-      {label && <label className={styles['select-label']}>{label}</label>}
+      {label && (
+        <label className={styles['select-label']}>
+          {label}
+          {required && <span className={styles['select-label-required']}>*</span>}
+        </label>
+      )}
       <div className={controlClasses.join(' ')}>
-        {leadingIcon && <span className={styles['select-leading-icon']}>{leadingIcon}</span>}
-        {leadingAvatar && <span className={styles['select-leading-avatar']} />}
-        {leadingDot && <span className={styles['select-leading-dot']} style={{ background: leadingDot }} />}
-        {search ? (
-          <input
-            className={styles['select-search']}
-            type="text"
-            placeholder={placeholder || 'Search...'}
-            disabled={isDisabled}
-            defaultValue={value}
-          />
-        ) : tags.length > 0 ? (
-          <span className={styles['select-tags']}>
-            {tags.map((tag, i) => (
-              <span key={i} className={styles['select-tag']}>
-                {tag}
-                <span className={styles['select-tag-remove']}><XIcon /></span>
-              </span>
-            ))}
-          </span>
-        ) : (
-          <span>{value || placeholder}</span>
+        {leadingIcon && (
+          <span className={styles['select-leading-icon']}>{leadingIcon}</span>
         )}
-        <span className={styles['select-chevron']}><ChevronDown /></span>
+        {leadingAvatar && <span className={styles['select-leading-avatar']} />}
+        {leadingDot && (
+          <span
+            className={styles['select-leading-dot']}
+            style={{ background: leadingDot }}
+          />
+        )}
+        <div className={styles['select-content']}>
+          {search ? (
+            <input
+              className={styles['select-search']}
+              type="text"
+              placeholder={placeholder || 'Search...'}
+              disabled={isDisabled}
+              defaultValue={value}
+            />
+          ) : tags.length > 0 ? (
+            <span className={styles['select-tags']}>
+              {tags.map((tag, i) => (
+                <span key={i} className={styles['select-tag']}>
+                  {tag}
+                  <span className={styles['select-tag-remove']}>
+                    <XIcon />
+                  </span>
+                </span>
+              ))}
+            </span>
+          ) : (
+            <>
+              <span className={styles['select-value']}>
+                {value || placeholder}
+              </span>
+              {supportingText && (
+                <span className={styles['select-supporting']}>{supportingText}</span>
+              )}
+            </>
+          )}
+        </div>
+        <span className={styles['select-chevron']}>
+          <ChevronDown />
+        </span>
       </div>
       {hint && <span className={styles['select-hint']}>{hint}</span>}
       {children}
@@ -271,23 +333,39 @@ export function SelectItem({
   if (disabled || state === 'disabled') classes.push(styles.disabled);
 
   return (
-    <button className={classes.join(' ')} disabled={disabled || state === 'disabled'} type="button" {...props}>
-      {icon && <span className={styles['select-item-icon']}>{icon}</span>}
-      {avatar && (
-        <span className={styles['select-item-avatar']}>
-          {typeof avatar === 'string' ? avatar : 'U'}
-        </span>
-      )}
-      {dot && <span className={styles['select-item-dot']} style={{ background: dot }} />}
-      <span className={styles['select-item-content']}>
-        <span className={styles['select-item-label']}>{children}</span>
-        {supportingText && <span className={styles['select-item-supporting']}>{supportingText}</span>}
-      </span>
-      {selected && (
-        <span className={styles['select-item-check']}>
-          <CheckIcon />
-        </span>
-      )}
+    <button
+      className={classes.join(' ')}
+      disabled={disabled || state === 'disabled'}
+      type="button"
+      {...props}
+    >
+      <div className={styles['select-item-content']}>
+        <div className={styles['select-item-text']}>
+          {icon && <span className={styles['select-item-icon']}>{icon}</span>}
+          {avatar && (
+            <span className={styles['select-item-avatar']}>
+              {typeof avatar === 'string' ? avatar : 'U'}
+            </span>
+          )}
+          {dot && (
+            <span
+              className={styles['select-item-dot']}
+              style={{ background: dot }}
+            />
+          )}
+          <span className={styles['select-item-label']}>{children}</span>
+          {supportingText && (
+            <span className={styles['select-item-supporting']}>
+              {supportingText}
+            </span>
+          )}
+        </div>
+        {selected && (
+          <span className={styles['select-item-check']}>
+            <CheckIcon />
+          </span>
+        )}
+      </div>
     </button>
   );
 }

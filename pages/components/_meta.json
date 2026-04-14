@@ -5,6 +5,7 @@
     "inputs": "Inputs",
     "toggles": "Toggles",
     "tabs": "Tabs",
+    "segmented-control": "Segmented Control",
     "dropdowns": "Dropdowns",
     "checkboxes": "Checkboxes"
 }
