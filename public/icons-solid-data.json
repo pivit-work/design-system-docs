@@ -3339,6 +3339,10 @@
   ],
   "Communication": [
     {
+      "name": "ai-chat-01",
+      "file": "/icons-solid/ai-chat-01.svg"
+    },
+    {
       "name": "annotation-alert",
       "file": "/icons-solid/annotation-alert.svg"
     },
