@@ -1,0 +1,286 @@
+import { Modal } from '../../components/Modal'
+import { ComponentPreview, PropsTable } from '../../components/ComponentPreview'
+
+# Modals
+
+중요한 정보를 강조하거나 사용자의 결정을 받아야 할 때 사용하는 오버레이 컴포넌트입니다.
+본문 컨텍스트 위에 패널이 올라와 주의를 집중시킵니다.
+
+Figma 컴포넌트: `Modal`, `_Modal header`, `_Modal actions`
+
+---
+
+## Horizontal
+
+아이콘과 텍스트가 가로로 배치되는 기본 타입입니다. Confirm/Cancel 같이 단순한 결정을 받을 때 가장 많이 씁니다.
+
+### Brand (Success)
+
+<ComponentPreview code={`<Modal
+  type="horizontal"
+  icon="brand"
+  title="Blog post published"
+  description="This blog post has been published. Team members will be able to edit this post and republish changes."
+  secondaryLabel="Cancel"
+  primaryLabel="Confirm"
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="brand"
+    title="Blog post published"
+    description="This blog post has been published. Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+  />
+</ComponentPreview>
+
+### Warning
+
+저장되지 않은 변경사항 등 경고를 표시할 때 사용합니다.
+
+<ComponentPreview code={`<Modal
+  type="horizontal"
+  icon="warning"
+  title="Unsaved changes"
+  description="Do you want to save or discard changes?"
+  secondaryLabel="Discard"
+  primaryLabel="Save changes"
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="warning"
+    title="Unsaved changes"
+    description="Do you want to save or discard changes?"
+    secondaryLabel="Discard"
+    primaryLabel="Save changes"
+  />
+</ComponentPreview>
+
+### Destructive
+
+되돌릴 수 없는 파괴적 액션(삭제 등)을 확인받을 때 사용합니다. Primary 버튼이 빨간색으로 표시됩니다.
+
+<ComponentPreview code={`<Modal
+  type="horizontal"
+  icon="error"
+  title="Delete blog post"
+  description="Are you sure you want to delete this post? This action cannot be undone."
+  secondaryLabel="Cancel"
+  primaryLabel="Delete"
+  primaryDestructive
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="error"
+    title="Delete blog post"
+    description="Are you sure you want to delete this post? This action cannot be undone."
+    secondaryLabel="Cancel"
+    primaryLabel="Delete"
+    primaryDestructive
+  />
+</ComponentPreview>
+
+---
+
+## Stacked Left Aligned
+
+아이콘이 위에 오고 그 아래에 제목/설명이 좌측 정렬됩니다. 텍스트가 길거나 본문 콘텐츠를 덧붙일 때 적합합니다.
+
+<ComponentPreview code={`<Modal
+  type="stacked-left"
+  icon="brand"
+  title="Blog post published"
+  description="This blog post has been published. Team members will be able to edit this post and republish changes."
+  secondaryLabel="Cancel"
+  primaryLabel="Confirm"
+/>`}>
+  <Modal
+    type="stacked-left"
+    icon="brand"
+    title="Blog post published"
+    description="This blog post has been published. Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+  />
+</ComponentPreview>
+
+---
+
+## Stacked Center
+
+중앙 정렬 타입입니다. 완료/결제 성공 등 결과 피드백이나 강조성 메시지에 사용합니다.
+
+<ComponentPreview code={`<Modal
+  type="stacked-center"
+  icon="brand"
+  title="Blog post published"
+  description="This blog post has been published. Team members will be able to edit this post and republish changes."
+  secondaryLabel="Cancel"
+  primaryLabel="Confirm"
+/>`}>
+  <Modal
+    type="stacked-center"
+    icon="brand"
+    title="Blog post published"
+    description="This blog post has been published. Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+  />
+</ComponentPreview>
+
+---
+
+## Actions Layout
+
+액션 영역은 3가지 레이아웃을 지원합니다.
+
+### Right aligned (default)
+
+<ComponentPreview code={`<Modal
+  actionsLayout="right"
+  ...
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="brand"
+    title="Blog post published"
+    description="Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+    actionsLayout="right"
+  />
+</ComponentPreview>
+
+### Fill container (horizontal)
+
+버튼이 가로 너비를 균등하게 채웁니다.
+
+<ComponentPreview code={`<Modal
+  actionsLayout="fill"
+  ...
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="brand"
+    title="Blog post published"
+    description="Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+    actionsLayout="fill"
+  />
+</ComponentPreview>
+
+### Stacked (vertical)
+
+버튼을 세로로 쌓습니다. Primary 가 위, Secondary 가 아래입니다.
+
+<ComponentPreview code={`<Modal
+  actionsLayout="stacked"
+  ...
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="brand"
+    title="Blog post published"
+    description="Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+    actionsLayout="stacked"
+  />
+</ComponentPreview>
+
+---
+
+## With Helper
+
+좌측에 체크박스, 링크 등 부가 컨트롤을 배치할 수 있습니다. `helper` prop으로 JSX 를 전달합니다.
+
+<ComponentPreview code={`<Modal
+  helper={<label><input type="checkbox" /> Don't show again</label>}
+  ...
+/>`}>
+  <Modal
+    type="horizontal"
+    icon="brand"
+    title="Blog post published"
+    description="Team members will be able to edit this post and republish changes."
+    secondaryLabel="Cancel"
+    primaryLabel="Confirm"
+    helper={
+      <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
+        <input type="checkbox" /> Don't show again
+      </label>
+    }
+  />
+</ComponentPreview>
+
+---
+
+## Body Content
+
+아이콘/제목/설명 이외에 폼이나 리스트 등 본문 컨텐츠가 필요하면 `children` 으로 전달합니다.
+
+<ComponentPreview code={`<Modal title="Team settings" description="Manage your team preferences.">
+  <p>여기에 폼/리스트 등 본문을 넣습니다.</p>
+</Modal>`}>
+  <Modal
+    type="stacked-left"
+    icon="none"
+    title="Team settings"
+    description="Manage your team preferences."
+    secondaryLabel="Cancel"
+    primaryLabel="Save"
+  >
+    <div style={{ padding: '12px 0', color: 'var(--colors-text-textSecondary, #687079)' }}>
+      여기에 폼/리스트 등 본문 콘텐츠를 넣습니다.
+    </div>
+  </Modal>
+</ComponentPreview>
+
+---
+
+## Props
+
+<PropsTable data={[
+  { name: 'type', type: "'horizontal' | 'stacked-left' | 'stacked-center'", default: "'horizontal'", description: '헤더 레이아웃 타입' },
+  { name: 'icon', type: "'brand' | 'warning' | 'error' | 'none'", default: "'brand'", description: 'Featured 아이콘의 톤. none 이면 아이콘 숨김' },
+  { name: 'title', type: 'string', default: '-', description: '제목 텍스트' },
+  { name: 'description', type: 'string', default: '-', description: '설명 텍스트' },
+  { name: 'breakpoint', type: "'desktop' | 'mobile'", default: "'desktop'", description: '브레이크포인트. mobile 은 max-width 343px + radius 12' },
+  { name: 'showDivider', type: 'boolean', default: 'true', description: '헤더와 액션 사이 구분선 표시 여부' },
+  { name: 'actionsLayout', type: "'right' | 'fill' | 'stacked'", default: "'right'", description: '액션 영역 버튼 배치' },
+  { name: 'primaryLabel', type: 'string', default: '-', description: 'Primary 버튼 텍스트' },
+  { name: 'primaryDestructive', type: 'boolean', default: 'false', description: 'Primary 버튼 파괴적 스타일(빨강) 적용' },
+  { name: 'secondaryLabel', type: 'string', default: '-', description: 'Secondary 버튼 텍스트' },
+  { name: 'helper', type: 'ReactNode', default: '-', description: '액션 영역 좌측 부가 컨트롤(체크박스/링크 등)' },
+  { name: 'onClose', type: '() => void', default: '-', description: '닫기 버튼 클릭 핸들러' },
+  { name: 'onPrimary', type: '() => void', default: '-', description: 'Primary 클릭 핸들러' },
+  { name: 'onSecondary', type: '() => void', default: '-', description: 'Secondary 클릭 핸들러' },
+  { name: 'children', type: 'ReactNode', default: '-', description: '본문 영역 콘텐츠' },
+]} />
+
+---
+
+## Figma Variants
+
+### Modal
+
+| Property | Values |
+| --- | --- |
+| **Type** | `Horizontal` `Warning horizontal` `Destructive horizontal` `Stacked with team` `Stacked left aligned` `Warning stacked left aligned` `Destructive stacked left aligned` `Centered photo` `Centered photo carousel` `Centered video carousel` `Checkboxes` `Access request` `Plan 01` `Plan 02` `File upload` `Payment method` `Date picker` `Payment details` `Payment details with image` `Banner appearance` `Toggles` `Link field` `Email invite` `User invite` `Input field` `Labels` `Dropdown` `2FA code` `Verification code` `Password prompt` `Log in` `Sign up 01` `Sign up 02` `Profile settings` `User selection` `Image crop` `Form 01` `Form 02` `Appearance settings` `Calendar event` `A.I. assistant` `User settings` `New project` `Text editor` |
+| **Breakpoint** | `Desktop` `Mobile` |
+
+### _Modal header
+
+| Property | Values |
+| --- | --- |
+| **Type** | `Horizontal left aligned` `Center aligned` `Left aligned` |
+| **Breakpoint** | `Desktop` `Mobile` |
+
+### _Modal actions
+
+| Property | Values |
+| --- | --- |
+| **Type** | `Vertical fill container` `Horizontal fill container` `Horizontal right aligned (checkbox)` |
+| **Destructive** | `True` `False` |
+| **Breakpoint** | `Desktop` `Mobile` |
